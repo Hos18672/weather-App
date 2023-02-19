@@ -1,5 +1,6 @@
 import "./main.scss";
 import axios from "axios";
+import { Switch } from "../switch/switch";
 import { useEffect, useState } from "react";
 import { getCurrentWeather } from "./weather-api";
 import { getDailyForecast } from "./weather-api";
@@ -86,8 +87,8 @@ export const MainContainer = () => {
 
   return (
     <div className="main-container">
-      <div className="info">
-      <form onSubmit={handleFormSubmit}>
+      <div className="top-container">
+        <form onSubmit={handleFormSubmit}>
           <input
             type="text"
             id="city"
@@ -97,6 +98,9 @@ export const MainContainer = () => {
           />
           <button type="submit">Search</button>
         </form>
+        <Switch />
+      </div>
+      <div className="info">
         {weather && (
           <div className="current-weather-container">
             <div className="current-weather">
