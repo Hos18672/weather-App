@@ -1,0 +1,10 @@
+.right-menu-container{
+    padding: 5px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    & .top-container{
+        display: flex;
+        justify-content: end;
+    }
+}
