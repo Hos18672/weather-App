@@ -1,19 +1,21 @@
 import { useState } from "react";
 import "./body.scss";
-import {Menu} from "./../left-content/menu"
-import {Content} from "../right-content/content"
+import {Weather} from "../../components/body/weather/weather"
+import {Nav} from "../../components/body/nav/nav"
+import {Left} from "../../components/body/left/left"
+import {Middle} from "../../components/body/middle/middle"
+import {Right} from "../../components/body/right/right"
 
-export const Header = () => {
+export const Main = () => {
   const [open, setOpen] = useState(false);
-
   return (
     <main className="main">
-      <div className="left-container">
-        <div className="left-content-container"><Menu/></div>
-      </div>
-      <div className="right-container">
-        <div className="right-content-container"><Content/></div>
-      </div>
+        <div className="container top-nav-container"><Nav/></div>
+        <section className="main-container">
+          <div className="container left-container"><Left/></div>
+          <div className="container middle-container"><Middle/></div>
+          <div className="container right-container"><Right/></div>
+        </section>
     </main>
   );
 };

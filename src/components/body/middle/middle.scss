@@ -1,0 +1,39 @@
+.middle{
+    display: grid;
+    grid-template-rows: 2.5fr .5fr 3.1fr;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+
+    & .clock, .search, .links{
+        height: 100%;
+        width: 100%;
+    }
+    & .clock{
+        display: grid;
+        place-items: center;
+        & h1{
+            font-size: 3rem;
+        }
+        
+    }
+
+    & .search{
+        border: 1px solid black;
+        max-height: 60px;
+        border-radius: 10px;
+    }
+
+    & .links{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+
+        & .link{
+            min-height: 40px;
+            max-height: 100px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+    }
+}

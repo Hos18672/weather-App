@@ -1,0 +1,11 @@
+.right{
+    display: grid;
+    grid-template-rows: 40px 1fr 60px;
+    
+    & .chat-top, .chat-output, .chat-input{
+        height: 100%;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+}
