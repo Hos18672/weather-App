@@ -8,6 +8,7 @@ import {Right} from "../../components/body/right/right"
 
 export const Main = () => {
   const [open, setOpen] = useState(false);
+  
   return (
     <main className="main">
         <div className="container top-nav-container"><Nav/></div>

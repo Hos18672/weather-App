@@ -1,11 +1,47 @@
-.right{
+.right {
     display: grid;
-    grid-template-rows: 40px 1fr 60px;
-    
-    & .chat-top, .chat-output, .chat-input{
-        height: 100%;
-        width: 100%;
-        border: 1px solid black;
-        border-radius: 10px;
+    grid-template-rows: .05fr 1fr 40px;
+    gap: 10px;
+    padding: 15px;
+    width: 100%;
+
+    & .chat-window{
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        padding: 10px; 
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        & .user{
+            background-color: hsl(212, 100%, 50%);
+            width: fit-content;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+        }
     }
+
+    & .input-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+
+
+        & input {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            padding: 0 10px;
+        }
+        & button{
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            background-color: hsl(212, 100%, 50%);
+            color: white;
+        }
+    }
+
 }

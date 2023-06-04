@@ -1,14 +1,51 @@
-.left{
+.left {
     display: grid;
     grid-template-rows: 1fr 1fr;
     row-gap: 20px;
     margin: 0;
     padding: 0;
 
-    & .weather-container, .calendar-container{
-        border:1px solid black;
+    & .weather-container,
+    .calendar-container {
         height: 100%;
         width: 100%;
         border-radius: 10px;
     }
+
+    & .react-calendar {
+        width: 100%;
+        height: 90%;
+        border: none;
+        padding: 15px;
+        border-radius: 10px;
+
+
+        & .react-calendar__tile--now,
+        .react-calendar__tile--active,
+        .react-calendar__tile:hover,
+        .react-calendar__navigation__label:hover,
+        .react-calendar__navigation__arrow:hover {
+            border-radius: 5px;
+        }
+
+        & .react-calendar__month-view__days__day--weekend{
+            color: blue;
+        }
+        & .react-calendar__tile--now,  .react-calendar__tile--active{
+            color: black;
+        }
+
+        & .react-calendar__month-view__days{
+            height: 100%;
+        }
+
+        & .react-calendar__month-view{
+            height:100%;
+        }
+
+        & .react-calendar, .react-calendar__navigation__arrow{
+            font-size: 20px;
+        }
+    }
+
 }

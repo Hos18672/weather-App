@@ -1,52 +1,48 @@
-.main-container {
+.weather-main-container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     place-items: center;
-    padding: 2% 5%;
-    gap: 15px;
-    width: 100%!important;
+    padding: 5px;
+    gap: 5px;
+    width: 100%;
     max-width: 100%;
 
     & .top-container{
-        display: flex !important;
+        display: flex ;
         flex-direction: row;
-        justify-content: space-between !important;
+        justify-content: space-between ;
         width: 100%;
-        height: 50px !important;
-        min-height: fit-content !important;
+        height: 50px ;
+        min-height: fit-content;
         flex-wrap: wrap;
 
         & form {
+            height: fit-content;
             position: absolute;
-            height: 20px;
             display: flex;
             gap: 10px;
+            margin: 10px;
+            height: fit-content;
+            width: fit-content;
             & input {
                 height: 30px;
-                border: none;
-                border-radius: 50px;
+                border: 1px solid lightgray;
+                max-width: 100px;
+                border-radius: 5px;
                 padding: 2px 15px;
-                box-shadow: 4px 10px 15px -3px rgba(0, 0, 0, 0.151);
-                background-color: rgba(255, 255, 255, 0.486);
             }
 
             & button {
                 height: 30px;
                 border: none;
-                border-radius: 50px;
+                border-radius: 5px;
                 padding: 2px 15px;
-                background-color: white;
-                box-shadow: 4px 10px 15px -3px rgba(0,0,0,0.24);
-                background-color: rgba(255, 255, 255, 0.486);
+                background-color: hsl(212, 100%, 50%);
+                color: white;
                 cursor: pointer;
 
             }
-        }
-        & .switch{
-            position: absolute;
-            right: 6%;
-            
         }
     }
 
@@ -57,9 +53,11 @@
         align-items: flex-start;
         gap: 10px;
         width: 100%;
-        height: 280px;
+        height: 100px;
         padding: 10px;
-        margin: o auto;
+        margin: 0 auto;
+
+        
 
         & .current-weather-container {
             display: flex;
@@ -69,6 +67,7 @@
             width: 100%;
             height: 100%;
             padding: 10px;
+            font-size: 12px;
 
             & .current-weather{
                 display: flex;
@@ -79,7 +78,7 @@
 
                 & h1{
                     margin-bottom: 20%;
-                    font-size: 40px;
+                    font-size: 10px;
                 }
             }
             & img {
@@ -89,48 +88,54 @@
     }
 
     & .weather-container {
+        z-index: 111;
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: start;
         width: 100%;
-        height: 40%;
         gap: 30px 20px;
         padding: 10px;
+
+        & h2{
+            font-size: 13px;
+            padding-left: 10px;
+        }
 
         & ul {
             display: flex;
             flex-direction: row;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
             width: 100%;
-            height: 100%;
+            row-gap: 10px;
+            height: fit-content;
             text-decoration: none;
             list-style: none;
 
             & li {
                 flex: 1;
-                height: 100%;
+                & h3{
+                    font-size: 10px;
+                }
+                & p{
+                    font-size: 10px;
+                }
 
-                & div {
+                & .day {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-                    background-color: rgba(232, 246, 252, 0.39);
                     border-radius: 10px;
-                    height: 80px;
-                    min-height: 25vh;
-                    width: 100%;
-                    padding: 15px;
-                    -webkit-box-shadow: 1px 35px 53px -29px rgba(0, 0, 0, 0.582);
-                    -moz-box-shadow: 1px 35px 53px -29px rgba(0, 0, 0, 0.582);
-                    box-shadow: 1px 35px 53px -29px rgba(0, 0, 0, 0.582);
+                    height: 90px;
+                    padding: 5px;
+                    width: 65px;
+                
 
                     & img {
-                        width: 50%;
-                        max-width: 120px;
+                        width: 80%;
+                        max-width: 50px;
                     }
                 }
             }

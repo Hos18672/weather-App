@@ -50,7 +50,7 @@ export const Weather = () => {
   }, []);
 
   return (
-      <div className="main-container">
+      <div className="weather-main-container">
         <div className="top-container">
           <form onSubmit={handleFormSubmit}>
             <input
@@ -67,9 +67,9 @@ export const Weather = () => {
           {weather && (
             <div className="current-weather-container">
               <div className="current-weather">
-                <h1>{city}</h1>
-                <p>Temperature: {weather.temperature} °C</p>
-                <p>Description: {weather.description}</p>
+                <h2>{city}</h2>
+                <p>{weather.temperature} °C</p>
+                <p>{weather.description}</p>
               </div>
               {["Cloudy", "Intermittent clouds", "Mostly cloudy","Partly cloudy",  "Mostly Sunny"].includes(weather.description) && (
                 <img src={cloudy} alt={weather.description}></img>
@@ -87,7 +87,6 @@ export const Weather = () => {
           )}
         </div>
         <div className="weather-container">
-          <h2>Forecast for {city}</h2>
           <ul>
             {forecastData.map((day, index) => (
               <li key={index}>

@@ -3,8 +3,8 @@ import "./nav.scss";
 
 export const Nav = () => {
   return (
-    <main className="nav">
-        <div className="nav-container card">Top nav</div>
-    </main>
+    <div className="nav card">
+        <div className="nav-container">Reza</div>
+    </div>
   );
 };
