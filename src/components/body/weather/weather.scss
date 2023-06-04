@@ -6,7 +6,6 @@
     padding: 5px;
     gap: 5px;
     width: 100%;
-    max-width: 100%;
 
     & .top-container{
         display: flex ;
@@ -21,14 +20,15 @@
             height: fit-content;
             position: absolute;
             display: flex;
+            justify-content: space-between;
             gap: 10px;
             margin: 10px;
             height: fit-content;
-            width: fit-content;
+            width: 90%;
             & input {
+                flex: 1;
                 height: 30px;
                 border: 1px solid lightgray;
-                max-width: 100px;
                 border-radius: 5px;
                 padding: 2px 15px;
             }
