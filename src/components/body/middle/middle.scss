@@ -1,6 +1,8 @@
 .middle {
     display: grid;
+    place-items: center;
     grid-template-rows: 2.5fr .5fr 3.1fr;
+    grid-template-columns: 1fr;
     margin: 0;
     padding: 0;
     gap: 20px;
@@ -14,10 +16,12 @@
 
     & .clock {
         display: grid;
-        grid-template-columns: 1fr 10px 1fr 10px 1fr;
-        max-width: 50%;
-        margin: 0 auto;
         place-items: center;
+        grid-template-columns:  1fr 10px 1fr 10px 1fr ;
+        place-items: center;
+        max-width: fit-content;
+        min-width: 50%;
+        column-gap: 5px;
         font-size: 90px;
         gap: 10px;
 

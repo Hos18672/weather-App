@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./left.scss";
-
 import {Weather} from "../weather/weather"
 import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';

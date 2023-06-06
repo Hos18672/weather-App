@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import "./right.scss";
+// import {config} from 'dotenv'
+// config()
+import  {Configuration, OpenAIApi} from "openai"
+
 
 export const Right = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
+
+
+   const openai = new OpenAIApi(new Configuration({apiKey: "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"}))
+
 
   const sendMessage = async () => {
     if (inputValue.trim() === '') return;
@@ -16,22 +25,31 @@ export const Right = () => {
     setInputValue('');
 
     // Send user message to the backend for processing
-    const response = await fetch("https://api.example.com/chatgpt/endpoint?api_key=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", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message: inputValue }),
-    });
+    try {
+      // const response = await axios.post('/chatgpt/endpoint', { message: inputValue });
 
-    if (response.ok) {
-      const data = await response.json();
+      // if (response.status === 200) {
+      //   const data = response.data;
 
-      // Add AI response to the chat
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { content: data.message, sender: 'ai' },
-      ]);
+      //   // Add AI response to the chat
+      //   setMessages((prevMessages) => [
+      //     ...prevMessages,
+      //     { content: data.message, sender: 'ai' },
+      //   ]);
+      // }
+
+     await openai.createChatCompletion({
+        model: "gpt-3.5-turbo",
+        messages: [{role: "user", content: inputValue}]
+      }).then(res =>{
+
+        setMessages((prevMessages) => [
+              ...prevMessages,
+              { content: res.data.choices[0].message.content, sender: 'ai' },
+             ]);
+      })
+    } catch (error) {
+      console.log('Fehler beim Aufrufen des Server-Endpunkts:', error);
     }
   };
 
@@ -48,7 +66,6 @@ export const Right = () => {
       document.removeEventListener('keypress', handleKeyPress);
     };
   }, []);
-
 
   return (
     <div className="right card">

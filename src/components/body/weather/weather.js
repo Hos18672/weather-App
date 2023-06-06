@@ -80,7 +80,7 @@ export const Weather = () => {
               {["Windy","Storm", "Thunderstorms", "Mostly cloudy w/ t-storms"].includes(weather.description) && (
                 <img src={Storm} alt={weather.description}></img>
               )}
-              {["rainy", "Rain", "Showers", "Dreary", "Partly sunny w/ t-storms",].includes(weather.description) && (
+              {["rainy", "Rain", "Light rain","Showers", "Dreary"].includes(weather.description) && (
                 <img src={PartlyRainy} alt={weather.description}></img>
               )}
             </div>
@@ -101,7 +101,7 @@ export const Weather = () => {
                   {["Windy", "Storm", "Thunderstorms", "Mostly cloudy w/ t-storms"].includes(day.description) && (
                     <img src={Storm} alt={day.description}></img>
                   )}
-                  {["rainy", "Rain", "Showers"].includes(day.description) && (
+                  {["rainy", "Rain", "Showers", "Light rain","Dreary"].includes(day.description) && (
                     <img src={PartlyRainy} alt={day.description}></img>
                   )}
                   <p>{day.minTemperature}°C</p>

@@ -6,9 +6,11 @@
     padding: 5px;
     gap: 5px;
     width: 100%;
+    height: fit-content !important;
 
     & .top-container{
         display: flex ;
+        flex: 1;
         flex-direction: row;
         justify-content: space-between ;
         width: 100%;
@@ -28,6 +30,7 @@
             & input {
                 flex: 1;
                 height: 30px;
+                max-width: 60%;
                 border: 1px solid lightgray;
                 border-radius: 5px;
                 padding: 2px 15px;
@@ -35,13 +38,13 @@
 
             & button {
                 height: 30px;
+                width: 40%;
                 border: none;
                 border-radius: 5px;
                 padding: 2px 15px;
                 background-color: hsl(212, 100%, 50%);
                 color: white;
                 cursor: pointer;
-
             }
         }
     }
@@ -49,6 +52,7 @@
 
     & .info {
         display: flex;
+        flex: 1;
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
@@ -56,6 +60,7 @@
         height: 100px;
         padding: 10px;
         margin: 0 auto;
+        margin-top: 50px;
 
         
 
@@ -90,11 +95,13 @@
     & .weather-container {
         z-index: 111;
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: start;
         align-items: start;
         width: 100%;
-        gap: 30px 20px;
+        height: fit-content !important;
+        gap: 20px;
         padding: 10px;
 
         & h2{
@@ -131,6 +138,7 @@
                     height: 90px;
                     padding: 5px;
                     width: 65px;
+                    row-gap: 7px;
                 
 
                     & img {
