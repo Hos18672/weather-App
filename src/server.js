@@ -19,8 +19,16 @@ app.post('/chatgpt/endpoint', async (req, res) => {
     const { message } = req.body;
 
     const response = await axios.post(
-      'https://api.example.com/chatgpt/endpoint?api_key=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',
-      { message }
+      'https://api.example.com/chatgpt/endpoint?api_key=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',
+      { message },
+      {
+        headers: {
+          'Authorization': 'none',
+          "auth": {
+            "type": "none"
+          },
+        }
+      }
     );
 
     const chatbotResponse = response.data.message;

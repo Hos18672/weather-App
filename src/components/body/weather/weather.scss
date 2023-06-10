@@ -87,13 +87,13 @@
                 }
             }
             & img {
-                width: 30%;
+                width: 40%;
             }
         }
     }
 
     & .weather-container {
-        z-index: 111;
+        z-index: 1;
         display: flex;
         flex: 1;
         flex-direction: column;

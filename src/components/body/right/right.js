@@ -1,91 +1,54 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
 import "./right.scss";
-// import {config} from 'dotenv'
-// config()
-import  {Configuration, OpenAIApi} from "openai"
+import amazon from "../../../images/amazon1.png"
+import facebook from "../../../images/facebook.png"
+import gmail from "../../../images/gmail.png"
+import instagram from "../../../images/instagram.png"
+import google_map from "../../../images/google_map.png"
+import twitter from "../../../images/twitter.png"
+import whatsapp from "../../../images/whatsapp2.png"
+import youtube from "../../../images/youtube.png"
 
 
 export const Right = () => {
-  const [messages, setMessages] = useState([]);
-  const [inputValue, setInputValue] = useState('');
 
-
-   const openai = new OpenAIApi(new Configuration({apiKey: "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"}))
-
-
-  const sendMessage = async () => {
-    if (inputValue.trim() === '') return;
-
-    // Add user message to the chat
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { content: inputValue, sender: 'user' },
-    ]);
-    setInputValue('');
-
-    // Send user message to the backend for processing
-    try {
-      // const response = await axios.post('/chatgpt/endpoint', { message: inputValue });
-
-      // if (response.status === 200) {
-      //   const data = response.data;
-
-      //   // Add AI response to the chat
-      //   setMessages((prevMessages) => [
-      //     ...prevMessages,
-      //     { content: data.message, sender: 'ai' },
-      //   ]);
-      // }
-
-     await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
-        messages: [{role: "user", content: inputValue}]
-      }).then(res =>{
-
-        setMessages((prevMessages) => [
-              ...prevMessages,
-              { content: res.data.choices[0].message.content, sender: 'ai' },
-             ]);
-      })
-    } catch (error) {
-      console.log('Fehler beim Aufrufen des Server-Endpunkts:', error);
-    }
-  };
-
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (event.key === 'Enter') {
-        sendMessage();
-      }
-    };
-
-    document.addEventListener('keypress', handleKeyPress);
-
-    return () => {
-      document.removeEventListener('keypress', handleKeyPress);
-    };
-  }, []);
 
   return (
-    <div className="right card">
-        <h3>Chat with ChatGPT</h3>
-        <div className="chat-window">
-        {messages.map((message, index) => (
-          <div key={index} className={`message ${message.sender}`}>
-            {message.content}
-          </div>
-        ))}
-      </div>
-      <div className="input-container">
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
-          placeholder="Type your message..."
-        />
-        <button onClick={sendMessage}>Send</button>
-      </div>
+
+    <div className="right">
+      <a className="card" href="https://www.amazon.de">
+        <img src={amazon}></img>
+        <p>Amazon</p>
+      </a>
+      <a className="card" href="https://www.facebook.com">
+        <img src={facebook}></img>
+        <p>Facebook</p>
+      </a>
+      <a className="card" href="https://www.instagram.com">
+        <img src={instagram}></img>
+        <p>Instagram</p>
+      </a>
+      <a className="card" href="https://www.twiiter.com">
+        <img src={twitter}></img>
+        <p>Twitter</p>
+      </a>
+      <a className="card" href="https://www.gmail.com">
+        <img src={gmail}></img>
+        <p>Gmail</p>
+      </a>
+      <a className="card" href="https://www.google.at/maps">
+        <img src={google_map}></img>
+        <p>Google map</p>
+      </a>
+      <a className="card" href="https://web.whatsapp.com/">
+        <img src={whatsapp}></img>
+        <p>Whatsapp</p>
+      </a>
+      <a className="card" href="https://youtube.com/">
+        <img src={youtube}></img>
+        <p>Youtube</p>
+      </a>
+
     </div>
   );
 };

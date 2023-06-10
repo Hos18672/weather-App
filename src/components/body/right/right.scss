@@ -1,47 +1,31 @@
 .right {
     display: grid;
-    grid-template-rows: .05fr 1fr 40px;
-    gap: 10px;
-    padding: 15px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     width: 100%;
+    padding: 40px;
+    overflow: auto;
 
-    & .chat-window{
-        border: 1px solid lightgray;
-        border-radius: 5px;
-        padding: 10px; 
+    & .card{
+        z-index: 1;
+        width: 100%;
+        min-width: 100px;
+        height: 100%;
+        min-height: 150px;
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        & .user{
-            background-color: hsl(212, 100%, 50%);
-            width: fit-content;
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: white;
+        justify-content: space-around;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        &:hover{
+            transform: scale(1.07);
+        }
+        & img{
+            height: 50%;
+            width: 50%;
+            object-fit: contain;
         }
     }
-
-    & .input-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 10px;
-        width: 100%;
-
-
-        & input {
-            width: 100%;
-            border-radius: 5px;
-            border: 1px solid lightgray;
-            padding: 0 10px;
-        }
-        & button{
-            width: 100px;
-            border-radius: 5px;
-            border: 1px solid lightgray;
-            background-color: hsl(212, 100%, 50%);
-            color: white;
-        }
-    }
-
 }

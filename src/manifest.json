@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "RH",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "A new dashboard for your tab",
+    "browser_action": {
+      "default_popup": "index.html"
+    },
+    "icons": {
+      "16": "main.png",
+      "48": "main.png",
+      "128": "main.png"
+    },
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
+  
