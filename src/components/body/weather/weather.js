@@ -71,7 +71,7 @@ export const Weather = () => {
                 <p>{weather.temperature} °C</p>
                 <p>{weather.description}</p>
               </div>
-              {["Cloudy", "Intermittent clouds", "Mostly cloudy","Partly cloudy",  "Mostly Sunny"].includes(weather.description) && (
+              {["Cloudy", "Intermittent clouds", "Mostly cloudy","Partly cloudy",  "Mostly Sunny", "Mostly cloudy w/ showers"].includes(weather.description) && (
                 <img src={cloudy} alt={weather.description}></img>
               )}
               {["Hot","Partly sunny", "Partly sunny w/ showers", "Mostly sunny", "Mostly Clear",  "Clear", "Partly sunny w/ t-storms", "Clear", "Sunny"].includes(weather.description) && (
@@ -92,7 +92,7 @@ export const Weather = () => {
               <li key={index}>
                 <div className="day">
                   <h3>{new Date(day.date).toLocaleDateString('en-US', { weekday: 'long' })}</h3>
-                  {["Cloudy", "Dreary", "Intermittent clouds", "Partly cloudy", "Mostly cloudy"].includes(day.description) && (
+                  {["Cloudy", "Dreary", "Intermittent clouds", "Partly cloudy", "Mostly cloudy", "Mostly cloudy w/ showers"].includes(day.description) && (
                     <img src={cloudy} alt={day.description}></img>
                   )}
                   {["Hot","Partly sunny", "Partly sunny w/ showers", "Mostly sunny", "Mostly Clear", "Partly sunny w/ t-storms", "Clear", "Sunny"].includes(day.description) && (

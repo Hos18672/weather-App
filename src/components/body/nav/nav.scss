@@ -8,6 +8,9 @@
   height: 50px !important;
   z-index: 2222222222;
   position: relative;
+  &  p{ 
+    font-size: 20px;
+  }
   
   & .menu-container{
     position: relative;
@@ -34,9 +37,10 @@
     align-items: center;
 
     & p {
-      padding: 5px;
+      padding: 2px;
       height: 30px;
       width: 150px;
+      font-size: 20px;
     }
 
     & div {
@@ -60,6 +64,8 @@
           color: black;
           padding: 5px;
           width: 100%;
+          font-size: 15px;
+
         }
 
         &:hover {

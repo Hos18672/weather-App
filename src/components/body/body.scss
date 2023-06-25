@@ -43,6 +43,11 @@ main {
         gap: 40px;
         z-index: 0;
 
+
+        @media screen and  (max-width:1080px){
+            grid-template-columns: 1fr 1.5fr ;
+        }
+
         & .left-container {
  
         }
