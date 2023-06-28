@@ -74,7 +74,7 @@ export const Weather = () => {
               {["Cloudy", "Intermittent clouds", "Mostly cloudy","Partly cloudy",  "Mostly Sunny", "Mostly cloudy w/ showers"].includes(weather.description) && (
                 <img src={cloudy} alt={weather.description}></img>
               )}
-              {["Hot","Partly sunny", "Partly sunny w/ showers", "Mostly sunny", "Mostly Clear",  "Clear", "Partly sunny w/ t-storms", "Clear", "Sunny"].includes(weather.description) && (
+              {["Hot","Partly sunny", "Partly sunny w/ showers", "Mostly sunny", "Mostly Clear",  "Clear", "Partly sunny w/ t-storms", "Clear", "Sunny",  "Hazy sunshine"].includes(weather.description) && (
                 <img src={Sunny} alt={weather.description}></img>
               )}
               {["Windy","Storm", "Thunderstorms", "Mostly cloudy w/ t-storms", "Thunderstorm"].includes(weather.description) && (
@@ -95,7 +95,7 @@ export const Weather = () => {
                   {["Cloudy", "Dreary", "Intermittent clouds", "Partly cloudy", "Mostly cloudy", "Mostly cloudy w/ showers"].includes(day.description) && (
                     <img src={cloudy} alt={day.description}></img>
                   )}
-                  {["Hot","Partly sunny", "Partly sunny w/ showers", "Mostly sunny", "Mostly Clear", "Partly sunny w/ t-storms", "Clear", "Sunny"].includes(day.description) && (
+                  {["Hot","Partly sunny", "Partly sunny w/ showers", "Mostly sunny", "Mostly Clear", "Partly sunny w/ t-storms", "Clear", "Sunny",  "Hazy sunshine"].includes(day.description) && (
                     <img src={Sunny} alt={day.description}></img>
                   )}
                   {["Windy", "Storm", "Thunderstorms", "Mostly cloudy w/ t-storms", "Thunderstorm"].includes(day.description) && (
